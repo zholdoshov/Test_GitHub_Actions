@@ -40,11 +40,14 @@ jobs:
           password: ${{ secrets.SMTP_PASSWORD }}
           subject: Test Results for ${{ github.repository }}
           to: nur.joldoshov@gmail.com
-          from: nur.joldoshov@gmail.com
+          from: regression.results@gmail.com
           content_type: text/plain
           body: |
             The test results for the push to ${{ github.repository }} are as follows:
             
-            ${{ steps.test.outcome }}
-            
+            Tests run: ${{ steps.test.outputs.tests_run }}
+            Failures: ${{ steps.test.outputs.failures }}
+            Errors: ${{ steps.test.outputs.errors }}
+            Skipped: ${{ steps.test.outputs.skipped }}
+
             Check the full details on GitHub: ${{ github.run_url }}
