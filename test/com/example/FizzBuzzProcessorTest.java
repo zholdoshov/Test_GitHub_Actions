@@ -19,7 +19,7 @@ class FizzBuzzProcessorTest {
 		result = FizzBuzzProcessor.convert(input);
 		System.out.format("  fb.convert(%d) = %s\n",input,result);
 
-		Assertions.assertEquals("1", FizzBuzzProcessor.convert(3));
+		Assertions.assertEquals("1", FizzBuzzProcessor.convert(1));
 		Assertions.assertEquals("2", FizzBuzzProcessor.convert(2));
 	}
 
